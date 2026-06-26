@@ -1,0 +1,7 @@
+
+.main-content {
+    background-color: var(--color-principal);
+    height: 100vh;
+    text-align: center;
+    padding: 2rem;
+}
