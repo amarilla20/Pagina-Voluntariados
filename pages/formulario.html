@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiero Ayudar - Red de Voluntariado Municipal</title>
+  <link rel="stylesheet" href="../css/formulario.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <div class="logo-icon">R</div>
+        <div>
+          <h1>Red de Voluntariado</h1>
+          <p>Municipio de La Matanza</p>
+        </div>
+      </div>
+      
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="mapa.html">Mapa</a>
+        <a href="#">Necesidades</a>
+        <a href="formulario.html">Ayudar</a>
+      </nav>
+      
+      <div class="auth-buttons">
+        <a href="#" class="btn-secondary">Ingresar</a>
+        <a href="#" class="btn-primary">Mi Perfil</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="form-page">
+    <div class="container">
+      <h1 class="form-title">Quiero Ayudar</h1>
+      <p class="form-subtitle">Completá el formulario según cómo quieras colaborar</p>
+
+      <div class="tabs">
+        <button class="tab-button active" onclick="showTab(1)">Donar Insumos</button>
+        <button class="tab-button" onclick="showTab(2)">Ser Voluntario</button>
+      </div>
+
+      <div id="tab1" class="tab-content active">
+        <form action="#" class="form-card">
+          <h2>Donación de Insumos</h2>
+          
+          <label>Nombre y Apellido</label>
+          <input type="text" placeholder="Ej: Juan Pérez" required>
+
+          <label>Teléfono</label>
+          <input type="tel" placeholder="Ej: 11 1234-5678" required>
+
+          <label>Email</label>
+          <input type="email" placeholder="tuemail@ejemplo.com" required>
+
+          <label>Barrio / Zona</label>
+          <input type="text" placeholder="Ej: San Justo, Ramos Mejía" required>
+
+          <label>¿Qué querés donar?</label>
+          <textarea rows="4" placeholder="Ej: 10 kg de arroz, 5 litros de leche, pañales, ropa de abrigo..." required></textarea>
+
+          <label>¿Cuándo podés acercar la donación?</label>
+          <select required>
+            <option value="">Seleccionar opción...</option>
+            <option>Esta semana</option>
+            <option>El fin de semana</option>
+            <option>En los próximos 15 días</option>
+            <option>Cuando sea necesario</option>
+          </select>
+
+          <button type="submit" class="btn-primary large">Confirmar Donación</button>
+        </form>
+      </div>
+
+      <div id="tab2" class="tab-content">
+        <form action="#" class="form-card">
+          <h2>Inscripción como Voluntario</h2>
+          
+          <label>Nombre y Apellido</label>
+          <input type="text" placeholder="Ej: María González" required>
+
+          <label>Edad</label>
+          <input type="number" min="16" placeholder="Ej: 28" required>
+
+          <label>Teléfono</label>
+          <input type="tel" placeholder="Ej: 11 1234-5678" required>
+
+          <label>Email</label>
+          <input type="email" placeholder="tuemail@ejemplo.com" required>
+
+          <label>Barrio / Zona</label>
+          <input type="text" placeholder="Ej: Villa Celina, González Catán" required>
+
+          <label>¿En qué podés ayudar?</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox"> Repartir comida</label>
+            <label><input type="checkbox"> Cocinar en merendero</label>
+            <label><input type="checkbox"> Apoyo escolar</label>
+            <label><input type="checkbox"> Limpieza y mantenimiento</label>
+            <label><input type="checkbox"> Transporte / Logística</label>
+            <label><input type="checkbox"> Otro</label>
+          </div>
+
+          <label>Disponibilidad</label>
+          <select required>
+            <option value="">Seleccionar disponibilidad...</option>
+            <option>Fines de semana</option>
+            <option>Entre semana por la tarde</option>
+            <option>Full time (varios días a la semana)</option>
+          </select>
+
+          <button type="submit" class="btn-primary large">Inscribirme como Voluntario</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p><strong>Red de Voluntariado Municipal</strong></p>
+      <p>Municipio de La Matanza • 2026</p>
+      <p class="small">Prototipo para Visualización e Interfaces</p>
+    </div>
+  </footer>
+
+  <script>
+    function showTab(n) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      
+      document.getElementById('tab' + n).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
