@@ -9,7 +9,7 @@
 </head>
 <body>
 
- <header class="header">
+  <header class="header">
     <div class="header-logo">
         <img class="header-logo-img" src="../img/Logo Voluntariados.png" alt="Logo Voluntariados La Matanza">
         <span class="header-logo-text">Voluntariados <strong>La Matanza</strong></span>
@@ -28,7 +28,7 @@
         <a href="#" class="btn-secondary">Iniciar sesión</a>
         <a href="#" class="btn-primary">Registrarse</a>
     </div>
-</header>
+  </header>
 
   <main class="form-page">
     <div class="container">
@@ -91,15 +91,34 @@
           <label>Barrio / Zona</label>
           <input type="text" placeholder="Ej: Villa Celina, González Catán" required>
 
-          <label>¿En qué podés ayudar?</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox"> Repartir comida</label>
-            <label><input type="checkbox"> Cocinar en merendero</label>
-            <label><input type="checkbox"> Apoyo escolar</label>
-            <label><input type="checkbox"> Limpieza y mantenimiento</label>
-            <label><input type="checkbox"> Transporte / Logística</label>
-            <label><input type="checkbox"> Otro</label>
-          </div>
+         <label style="margin-bottom: 15px; display: block; font-weight: 700;">¿En qué podés ayudar?</label>
+
+<div class="checkbox-grid">
+    <label class="checkbox-item">
+        <input type="checkbox">
+        <span>Repartir comida</span>
+    </label>
+    <label class="checkbox-item">
+        <input type="checkbox">
+        <span>Cocinar en merendero</span>
+    </label>
+    <label class="checkbox-item">
+        <input type="checkbox">
+        <span>Apoyo escolar</span>
+    </label>
+    <label class="checkbox-item">
+        <input type="checkbox">
+        <span>Limpieza y mantenimiento</span>
+    </label>
+    <label class="checkbox-item">
+        <input type="checkbox">
+        <span>Transporte / Logística</span>
+    </label>
+    <label class="checkbox-item">
+        <input type="checkbox">
+        <span>Otro</span>
+    </label>
+</div>
 
           <label>Disponibilidad</label>
           <select required>
@@ -115,32 +134,32 @@
     </div>
   </main>
 
- <footer class="footer">
-  <div>
-    <div class="footer-titulo">Red de Voluntariado Municipal</div>
-    <p>Municipio de La Matanza</p>
-  </div>
-
-  <div class="footer-links">
-    <ul class="footer-links-list">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="mapa.html">Mapa</a></li>
-      <li><a href="#">Necesidades</a></li>
-      <li><a href="formulario.html">Ayudar</a></li>
-    </ul>
-  </div>
-
-  <div class="footer-contacto">
-    <div class="footer-contacto-social">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
+  <footer class="footer">
+    <div>
+      <div class="footer-titulo">Red de Voluntariado Municipal</div>
+      <p>Municipio de La Matanza</p>
     </div>
-    <div class="footer-contacto-info">
-      <p>2026 • Prototipo Académico</p>
+
+    <div class="footer-links">
+      <ul class="footer-links-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="mapa.html">Mapa</a></li>
+        <li><a href="#">Necesidades</a></li>
+        <li><a href="formulario.html">Ayudar</a></li>
+      </ul>
     </div>
-  </div>
-</footer>
+
+    <div class="footer-contacto">
+      <div class="footer-contacto-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="footer-contacto-info">
+        <p>2026 • Prototipo Académico</p>
+      </div>
+    </div>
+  </footer>
 
   <script>
     function showTab(n) {
