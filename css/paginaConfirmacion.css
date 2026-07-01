@@ -39,3 +39,56 @@
   margin: 30px 0;
   text-align: left;
 }
+
+.pagina-confirmacion {
+  padding: 120px 20px 100px;
+  background: linear-gradient(135deg, #ffffff, #113a86);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.contenedor-confirmacion {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tarjeta-exito {
+  background: white;
+  padding: 60px 50px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  color: #333;
+}
+
+.icono-exito {
+  font-size: 6rem;
+  color: #00B4D8;
+  margin-bottom: 20px;
+}
+
+.detalle-exito {
+  background: #f0f9ff;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.botones-exito {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.contenido-pie {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  text-align: center;
+}
