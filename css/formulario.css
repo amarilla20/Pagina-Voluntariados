@@ -262,6 +262,8 @@ input:focus, select:focus, textarea:focus {
   color: var(--celeste-principal);
 }
 
+
+
 @media (max-width: 768px) {
   .contenido-pie {
     flex-direction: column;
