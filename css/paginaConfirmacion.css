@@ -92,3 +92,15 @@
   gap: 40px;
   text-align: center;
 }
+
+.boton-secundario.visible {
+  background-color: white;
+  color: var(--azul-principal);
+  opacity: 1;
+}
+
+.boton-secundario.visible:hover {
+  background-color: var(--celeste-principal);
+  color: white;
+  border-color: var(--celeste-principal);
+}

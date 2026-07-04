@@ -17,32 +17,44 @@
         <span class="texto-logo">Voluntariados <strong>La Matanza</strong></span>
     </div>
 
+   
     <nav class="navegacion">
         <ul class="lista-navegacion">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="mapa.html">Mapa</a></li>
-            <li><a href="formulario.html">Ayudar</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#">Contactos</a></li>
         </ul>
     </nav>
+
+    <div class="usuario-cabecera">
+        <a href="#" class="boton-secundario">Iniciar sesión</a>
+        <a href="#" class="boton-principal">Registrarse</a>
+    </div>
   </header>
+
 
   <main class="pagina-confirmacion">
     <div class="contenedor-confirmacion">
       <div class="tarjeta-exito">
-        <i class="fas fa-check-circle icono-exito"></i>
-        <h1>¡Gracias!</h1>
-        <h2>Tu donación ha sido registrada correctamente</h2>
-        <p>Nos pondremos en contacto pronto para coordinar la entrega.</p>
-        
-        <div class="detalle-exito">
-          <p><strong>Donación:</strong> 10 kg de arroz y leche</p>
-          <p><strong>Barrio:</strong> San Justo</p>
-          <p><strong>Fecha estimada:</strong> Esta semana</p>
-        </div>
+  <i class="fas fa-check-circle icono-exito"></i>
+  <h1>¡Gracias!</h1>
+  <h2>Tu donación ha sido registrada correctamente</h2>
+  <p>Nos pondremos en contacto pronto para coordinar la entrega.</p>
+  
+  <div class="detalle-exito" id="detalles-donacion">
+  
+  </div>
+
+  <div class="botones-exito">
+    <a href="index.html" class="boton-principal grande">Volver al Inicio</a>
+    <a href="formulario.html" class="boton-secundario grande">Hacer otra donación</a>
+  </div>
+</div>
 
         <div class="botones-exito">
           <a href="index.html" class="boton-principal grande">Volver al Inicio</a>
-          <a href="formulario.html" class="boton-secundario grande">Hacer otra donación</a>
+        <a href="formulario.html" class="boton-secundario grande visible">Hacer otra donación</a>
         </div>
       </div>
     </div>
@@ -75,4 +87,15 @@
   </footer>
 
 </body>
+<script>
+  const datos = JSON.parse(localStorage.getItem('datosDonacion'));
+  
+  if (datos) {
+    document.getElementById('detalles-donacion').innerHTML = `
+      <p><strong>Donación:</strong> ${datos.donacion || 'No especificado'}</p>
+      <p><strong>Barrio:</strong> ${datos.barrio || 'No especificado'}</p>
+      <p><strong>Fecha estimada:</strong> ${datos.fecha || 'Esta semana'}</p>
+    `;
+  }
+</script>
 </html>

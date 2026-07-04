@@ -75,7 +75,9 @@
             <option>En los próximos 15 días</option>
           </select>
 
-          <button type="submit" class="boton-principal grande">Confirmar Donación</button>
+         <button type="button" onclick="confirmarDonacion()" class="boton-principal grande">
+  Confirmar Donación
+</button>
         </form>
       </div>
 
@@ -158,6 +160,18 @@
         document.getElementById('form-voluntario').style.display = 'block';
       }
     }
+function confirmarDonacion() {
+  const datos = {
+    nombre: document.querySelector('#form-donacion input[placeholder="Ej: Juan Pérez"]').value,
+    donacion: document.querySelector('#form-donacion textarea').value,
+    barrio: document.querySelector('#form-donacion input[placeholder="Ej: San Justo, Ramos Mejía"]').value,
+    fecha: document.querySelector('#form-donacion select').value
+  };
+
+  localStorage.setItem('datosDonacion', JSON.stringify(datos));
+  window.location.href = 'confirmacion.html';
+}
+</script>
   </script>
 </body>
 </html>
