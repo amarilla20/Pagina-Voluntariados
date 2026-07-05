@@ -40,6 +40,21 @@
   text-align: left;
 }
 
+.boton-secundario {
+  color: white;
+  border: 2px solid white;
+  padding: 8px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.boton-secundario:hover {
+  background-color: white;
+  color: var(--azul-principal);
+}
+
 .pagina-confirmacion {
   padding: 120px 20px 100px;
   background: linear-gradient(135deg, #ffffff, #113a86);

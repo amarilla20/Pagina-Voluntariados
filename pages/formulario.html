@@ -117,7 +117,9 @@
             <option>Full time</option>
           </select>
 
-          <button type="submit" class="boton-principal grande">Inscribirme como Voluntario</button>
+        <button type="button" onclick="inscribirVoluntario()" class="boton-principal grande">
+  Inscribirme como Voluntario
+</button>
         </form>
       </div>
     </div>
@@ -147,7 +149,8 @@
         <p>2026 • Prototipo Académico</p>
       </div>
     </div>
- <script>
+<script>
+
   function elegirTipo(tipo) {
     document.getElementById('pantalla-eleccion').style.display = 'none';
     
@@ -159,15 +162,32 @@
   }
 
   function confirmarDonacion() {
+    const nombre = document.getElementById('nombre').value.trim();
+    const donacion = document.getElementById('donacion').value.trim();
+    const barrio = document.getElementById('barrio').value.trim();
+    const fecha = document.getElementById('fecha').value;
+
+    
+    if (!nombre || !donacion || !barrio || !fecha) {
+      alert("Por favor completa todos los campos antes de confirmar.");
+      return; 
+    }
+
     const datos = {
-      nombre: document.getElementById('nombre').value || "No especificado",
-      donacion: document.getElementById('donacion').value || "No especificado",
-      barrio: document.getElementById('barrio').value || "No especificado",
-      fecha: document.getElementById('fecha').value || "No especificado"
+      nombre: nombre,
+      donacion: donacion,
+      barrio: barrio,
+      fecha: fecha
     };
 
     localStorage.setItem('datosDonacion', JSON.stringify(datos));
     window.location.href = 'paginaConfirmacion.html';
+
+    function inscribirVoluntario() {
+ 
+  alert("Inscripción como voluntario registrada correctamente");
+  window.location.href = 'paginaConfirmacion.html'; 
+}
   }
 </script>
 </body>
