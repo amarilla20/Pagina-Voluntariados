@@ -16,7 +16,6 @@
         <span class="texto-logo">Voluntariados <strong>La Matanza</strong></span>
     </div>
 
-   
     <nav class="navegacion">
         <ul class="lista-navegacion">
             <li><a href="index.html">Inicio</a></li>
@@ -53,31 +52,31 @@
           <h2>Donación de Insumos</h2>
           
           <label>Nombre y Apellido</label>
-          <input type="text" placeholder="Ej: Juan Pérez" required>
+          <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
 
           <label>Teléfono</label>
-          <input type="tel" placeholder="Ej: 11 1234-5678" required>
+          <input type="tel" id="telefono" placeholder="Ej: 11 1234-5678" required>
 
           <label>Email</label>
-          <input type="email" placeholder="tuemail@ejemplo.com" required>
+          <input type="email" id="email" placeholder="tuemail@ejemplo.com" required>
 
           <label>Barrio / Zona</label>
-          <input type="text" placeholder="Ej: San Justo, Ramos Mejía" required>
+          <input type="text" id="barrio" placeholder="Ej: San Justo, Ramos Mejía" required>
 
           <label>¿Qué querés donar?</label>
-          <textarea rows="4" placeholder="Ej: 10 kg de arroz, 5 litros de leche..." required></textarea>
+          <textarea id="donacion" rows="4" placeholder="Ej: 10 kg de arroz, 5 litros de leche..." required></textarea>
 
           <label>¿Cuándo podés acercar la donación?</label>
-          <select required>
+          <select id="fecha" required>
             <option value="">Seleccionar opción...</option>
             <option>Esta semana</option>
             <option>El fin de semana</option>
             <option>En los próximos 15 días</option>
           </select>
 
-         <button type="button" onclick="confirmarDonacion()" class="boton-principal grande">
-               Confirmar Donación
-      </button>
+          <button type="button" onclick="confirmarDonacion()" class="boton-principal grande">
+            Confirmar Donación
+          </button>
         </form>
       </div>
 
@@ -125,53 +124,51 @@
   </main>
 
   <footer class="pie-pagina">
-  <div class="contenido-pie">
-    <div>
-      <div class="titulo-pie">Red de Voluntariado Municipal</div>
-      <p>Municipio de La Matanza</p>
-    </div>
-
-    <div class="enlaces-pie">
-      <ul class="lista-enlaces">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="mapa.html">Mapa</a></li>
-        <li><a href="formulario.html">Ayudar</a></li>
-      </ul>
-    </div>
-
-    <div class="contacto-pie">
-      <div class="redes-sociales">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+    <div class="contenido-pie">
+      <div>
+        <div class="titulo-pie">Red de Voluntariado Municipal</div>
+        <p>Municipio de La Matanza</p>
       </div>
-      <p>2026 • Prototipo Académico</p>
+
+      <div class="enlaces-pie">
+        <ul class="lista-enlaces">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="mapa.html">Mapa</a></li>
+          <li><a href="formulario.html">Ayudar</a></li>
+        </ul>
+      </div>
+
+      <div class="contacto-pie">
+        <div class="redes-sociales">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>2026 • Prototipo Académico</p>
+      </div>
     </div>
-  </div>
-</footer>
-
-  <script>
-    function elegirTipo(tipo) {
-      document.getElementById('pantalla-eleccion').style.display = 'none';
-      
-      if (tipo === 1) {
-        document.getElementById('form-donacion').style.display = 'block';
-      } else {
-        document.getElementById('form-voluntario').style.display = 'block';
-      }
+ <script>
+  function elegirTipo(tipo) {
+    document.getElementById('pantalla-eleccion').style.display = 'none';
+    
+    if (tipo === 1) {
+      document.getElementById('form-donacion').style.display = 'block';
+    } else {
+      document.getElementById('form-voluntario').style.display = 'block';
     }
-function confirmarDonacion() {
-  const datos = {
-    nombre: document.querySelector('#form-donacion input[placeholder="Ej: Juan Pérez"]').value,
-    donacion: document.querySelector('#form-donacion textarea').value,
-    barrio: document.querySelector('#form-donacion input[placeholder="Ej: San Justo, Ramos Mejía"]').value,
-    fecha: document.querySelector('#form-donacion select').value
-  };
+  }
 
-  localStorage.setItem('datosDonacion', JSON.stringify(datos));
-  window.location.href = 'confirmacion.html';
-}
+  function confirmarDonacion() {
+    const datos = {
+      nombre: document.getElementById('nombre').value || "No especificado",
+      donacion: document.getElementById('donacion').value || "No especificado",
+      barrio: document.getElementById('barrio').value || "No especificado",
+      fecha: document.getElementById('fecha').value || "No especificado"
+    };
+
+    localStorage.setItem('datosDonacion', JSON.stringify(datos));
+    window.location.href = 'paginaConfirmacion.html';
+  }
 </script>
-  </script>
 </body>
 </html>

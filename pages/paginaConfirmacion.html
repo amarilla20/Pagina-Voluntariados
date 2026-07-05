@@ -10,6 +10,7 @@
 </head>
 <body>
 
+ 
   <header class="cabecera">
     <div class="logo-cabecera">
         <img class="imagen-logo" src="../img/Logo Voluntariados.png" alt="Logo">
@@ -19,10 +20,16 @@
     <nav class="navegacion">
         <ul class="lista-navegacion">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="mapa.html">Mapa</a></li>
-            <li><a href="formulario.html">Ayudar</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#">Contactos</a></li>
         </ul>
     </nav>
+
+    <div class="usuario-cabecera">
+        <a href="#" class="boton-secundario">Iniciar sesión</a>
+        <a href="#" class="boton-principal">Registrarse</a>
+    </div>
   </header>
 
   <main class="pagina-confirmacion">
@@ -34,12 +41,12 @@
         <p>Nos pondremos en contacto pronto para coordinar la entrega.</p>
         
         <div class="detalle-exito" id="datos-donacion">
-      
+         
         </div>
 
         <div class="botones-exito">
           <a href="index.html" class="boton-principal grande">Volver al Inicio</a>
-          <a href="formulario.html" class="boton-secundario grande">Realizar otra Inscripción</a>
+          <a href="formulario.html" class="boton-secundario grande">Hacer otra donación</a>
         </div>
       </div>
     </div>
@@ -72,18 +79,18 @@
   </footer>
 
   <script>
-  
+   
     const datos = JSON.parse(localStorage.getItem('datosDonacion'));
 
     if (datos) {
       document.getElementById('datos-donacion').innerHTML = `
-        <p><strong>Donación:</strong> ${datos.donacion || 'No especificado'}</p>
-        <p><strong>Barrio:</strong> ${datos.barrio || 'No especificado'}</p>
-        <p><strong>Fecha estimada:</strong> ${datos.fecha || 'No especificado'}</p>
+        <p><strong>Donación:</strong> ${datos.donacion}</p>
+        <p><strong>Barrio:</strong> ${datos.barrio}</p>
+        <p><strong>Fecha estimada:</strong> ${datos.fecha}</p>
       `;
     } else {
       document.getElementById('datos-donacion').innerHTML = `
-        <p><strong>Donación:</strong> No se encontraron datos</p>
+        <p>No se encontraron datos de la donación.</p>
       `;
     }
   </script>
