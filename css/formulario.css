@@ -138,7 +138,7 @@ body {
   gap: 15px;
   padding: 40px 30px;
   background: white;
-  border: 3px solid #ddd;
+  border: 3px solid #FF6B00;
   border-radius: 16px;
   width: 280px;
   cursor: pointer;
@@ -147,7 +147,7 @@ body {
 }
 
 .boton-eleccion:hover {
-  border-color: var(--celeste-principal);
+  border-color: var(--naranja-principal);
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 180, 216, 0.2);
 }
@@ -185,7 +185,7 @@ input, select, textarea {
 }
 
 input:focus, select:focus, textarea:focus {
-  border-color: var(--celeste-principal);
+  border-color: var(--naranja-principal);
   outline: none;
 }
 .grupo-checkbox {
@@ -254,7 +254,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .lista-enlaces a:hover {
-  color: var(--celeste-principal);
+  color: var(--naranja-principal);
 }
 
 .redes-sociales a {
