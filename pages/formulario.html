@@ -48,11 +48,16 @@
       </div>
 
       <div id="form-donacion" class="formulario-escondido">
+
+        <div class="volver-eleccion" onclick="volverElegir()">
+    <i class="fas fa-arrow-left"></i>
+    <span>Volver a elegir</span>
+</div>
         <form action="#" class="tarjeta-formulario">
           <h2>Donación de Insumos</h2>
           
           <label>Nombre y Apellido</label>
-          <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+          <input type="text" id="nombre" placeholder="Ej: Juan Perez" required>
 
           <label>Teléfono</label>
           <input type="tel" id="telefono" placeholder="Ej: 11 1234-5678" required>
@@ -80,8 +85,14 @@
         </form>
       </div>
 
-      <div id="form-voluntario" class="formulario-escondido">
-        <form action="#" class="tarjeta-formulario">
+    <div id="form-voluntario" class="formulario-escondido">
+
+    <div class="volver-eleccion" onclick="volverElegir()">
+        <i class="fas fa-arrow-left"></i>
+        <span>Volver a elegir</span>
+    </div>
+
+    <form action="#" class="tarjeta-formulario">
           <h2>Inscripción como Voluntario</h2>
           
           <label>Nombre y Apellido</label>
@@ -149,46 +160,53 @@
         <p>2026 • Prototipo Académico</p>
       </div>
     </div>
-<script>
 
-  function elegirTipo(tipo) {
-    document.getElementById('pantalla-eleccion').style.display = 'none';
-    
-    if (tipo === 1) {
-      document.getElementById('form-donacion').style.display = 'block';
+    <script>
+function elegirTipo(tipo) {
+
+    document.getElementById("pantalla-eleccion").style.display = "none";
+
+    if (tipo == 1) {
+        document.getElementById("form-donacion").style.display = "block";
+        document.getElementById("form-voluntario").style.display = "none";
     } else {
-      document.getElementById('form-voluntario').style.display = 'block';
+        document.getElementById("form-voluntario").style.display = "block";
+        document.getElementById("form-donacion").style.display = "none";
     }
-  }
+}
 
-  function confirmarDonacion() {
-    const nombre = document.getElementById('nombre').value.trim();
-    const donacion = document.getElementById('donacion').value.trim();
-    const barrio = document.getElementById('barrio').value.trim();
-    const fecha = document.getElementById('fecha').value;
+function volverElegir() {
 
-    
+    document.getElementById("form-donacion").style.display = "none";
+    document.getElementById("form-voluntario").style.display = "none";
+
+    document.getElementById("pantalla-eleccion").style.display = "flex";
+}
+
+function confirmarDonacion() {
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const donacion = document.getElementById("donacion").value.trim();
+    const barrio = document.getElementById("barrio").value.trim();
+    const fecha = document.getElementById("fecha").value;
+
     if (!nombre || !donacion || !barrio || !fecha) {
-      alert("Por favor completa todos los campos antes de confirmar.");
-      return; 
+        alert("Por favor completa todos los campos antes de confirmar.");
+        return;
     }
 
     const datos = {
-      nombre: nombre,
-      donacion: donacion,
-      barrio: barrio,
-      fecha: fecha
+        nombre,
+        donacion,
+        barrio,
+        fecha
     };
 
-    localStorage.setItem('datosDonacion', JSON.stringify(datos));
-    window.location.href = 'paginaConfirmacion.html';
+    localStorage.setItem("datosDonacion", JSON.stringify(datos));
 
-    function inscribirVoluntario() {
- 
-  alert("Inscripción como voluntario registrada correctamente");
-  window.location.href = 'paginaConfirmacion.html'; 
+    window.location.href = "paginaConfirmacion.html";
 }
-  }
-</script>
+
+    </script>
 </body>
 </html>
